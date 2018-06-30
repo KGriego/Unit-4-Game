@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cookie Eater</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <h1 class="display-4">
+                    The Cookie Collector Game!
+                </h1>
+                <p class="lead">
+                    You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal, you
+                    will add a specific amount of points to your total score. You win the game by matching your total score
+                    to the random number, you lose the game if your total score goes above the random number. The value of
+                    each crystal is hidden form you until you click on it. Each time the game starts, the game will change
+                    the values of each crystal.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p id="randomStartNumber">
+        </p>
+    </div>
+    <div id="counterOfWinsLosses"></div>
+    <div>
+        <img id="chocoCookie" src="assets/images/chococookie.jpg" alt="Chocolate Cookie Image" class="img-thumbnail rounded imgNumber" onlick="randomNumberGenerated()">
+        <img id="swtCookie" src="assets/images/swtcookie.jpg" alt="Sweet Cookie Image" class="img-thumbnail rounded imgNumber" onlick="randomNumberGenerated()">
+        <img id="oreoCookie" src="assets/images/oreo.jpg" alt="Oreo Cookie" class="img-thumbnail rounded imgNumber" onlick="randomNumberGenerated()">
+        <img id="CookieMnstr" src="assets/images/cookiemnstr.jpg" alt="Cookie Monster 'The Eater of Cookies'" class="img-thumbnail rounded imgNumber" onlick="randomNumberGenerated()">
+    </div>
+    <div id="totalScore">I am purple</div>
+
+    <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
