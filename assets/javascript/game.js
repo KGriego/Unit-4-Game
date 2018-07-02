@@ -1,12 +1,12 @@
-function startGame() {
 
-}
+var userTotal = [];
+var totalWins = 0;
+var totalLosses = 0;
 
 function rNumberChoice() {
     var random = Math.floor(Math.random() * 999) + 1;
     return random;
 }
-
 
 function rChocolateCookieNumberChoice() {
     var random = Math.floor(Math.random() * 50) + 1;
@@ -28,24 +28,17 @@ function rCookieMonsterChoice() {
     return random;
 }
 
-
-function randomNumberGenerated (){
+function randomNumberGenerated() {
     $("#totalScore").html(rChclteCookieNumberChoice);
     console.log(rChclteCookieNumberChoice);
 }
 
-
-
-
+var userTotalValue;
 var rNumber = rNumberChoice();
 var rChclteCookieNumberChoice = rChocolateCookieNumberChoice();
 var rCookieMnstrChoice = rCookieMonsterChoice();
 var rSwtCookieChoice = rSweetCookieChoice();
 var rOreoCookieChoice = rOreoCookieNumberChoice();
-var userTotal = [];
-
-
-
 
 $(document).ready(function () {
     // Random start number is printed to the id of randomStartNumber
@@ -54,40 +47,46 @@ $(document).ready(function () {
 
     //this assigns a value to the images
     $("#chocoCookie").on("click", function () {
-        $("#totalScore").html(rChclteCookieNumberChoice);
         userTotal.push(rChclteCookieNumberChoice);
-        console.log(rChclteCookieNumberChoice);
-        console.log(userTotal);
+        userTotalValue = userTotal.reduce((a, b) => a + b, 0);
+        $("#totalScore").html(userTotalValue);
     })
     $("#swtCookie").on("click", function () {
-        $("#totalScore").html(rSwtCookieChoice);
         userTotal.push(rSwtCookieChoice);
-        console.log(userTotal);
-        console.log(rSwtCookieChoice);
+        userTotalValue = userTotal.reduce((a, b) => a + b, 0);
+        $("#totalScore").html(userTotalValue);
     })
     $("#oreoCookie").on("click", function () {
-        $("#totalScore").html(rOreoCookieChoice);
         userTotal.push(rOreoCookieChoice);
-        console.log(userTotal);
-        console.log(rOreoCookieChoice);
+        userTotalValue = userTotal.reduce((a, b) => a + b, 0);
+        $("#totalScore").html(userTotalValue);
     })
     $("#CookieMnstr").on("click", function () {
-        $("#totalScore").html(rCookieMnstrChoice);
         userTotal.push(rCookieMnstrChoice);
-        console.log(userTotal);
-        console.log(rCookieMnstrChoice);
+        userTotalValue = userTotal.reduce((a, b) => a + b, 0);
+        $("#totalScore").html(userTotalValue);
     })
 
-    // This adds the total of the images together until the user either wins or loses
-    if (rNumber === userTotal){
-        wins++;
-    }
-
-    // this shows the user how many times they have lost and won
-
-
-    // this reset the counter of wins and lose after each game has been won and lost    
-
-
-
+    // This determines if the user has won or lost the game
+    $(".img").on("click", function(){
+        console.log("rNumber: " + rNumber);
+        console.log("userTotalValue" + userTotalValue)
+        if (userTotalValue === rNumber) {
+            totalWins++;
+            $("#totalWins").html(totalWins);
+            rNumber = rNumberChoice();
+            $("#randomStartNumber").html(rNumber);
+            userTotal = [];
+            console.log(rNumber);
+            console.log(totalWins);
+        } else if (userTotalValue > rNumber) {
+            totalLosses++;
+            $("#totalLosses").html(totalLosses);
+            rNumber = rNumberChoice();
+            $("#randomStartNumber").html(rNumber);
+            userTotal = [];
+            console.log(rNumber);
+            console.log(totalLosses);
+        }
+    })  
 });

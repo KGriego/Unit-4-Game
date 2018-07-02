@@ -1,9 +1,16 @@
 #randomStartNumber {
     background: red;
-    
 }
 
 #totalScore {
+    background: blue;
+}
+
+#totalWins{
+    background: green;
+}
+
+#totalLosses {
     background: purple;
 }
 
