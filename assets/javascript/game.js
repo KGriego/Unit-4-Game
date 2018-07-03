@@ -42,29 +42,29 @@ var rOreoCookieChoice = rOreoCookieNumberChoice();
 
 $(document).ready(function () {
     // Random start number is printed to the id of randomStartNumber
-    $("#randomStartNumber").html(rNumber);
+    $("#randomStartNumber").html("Target Number: " + rNumber);
     console.log(rNumber);
 
     //this assigns a value to the images
     $("#chocoCookie").on("click", function () {
         userTotal.push(rChclteCookieNumberChoice);
         userTotalValue = userTotal.reduce((a, b) => a + b, 0);
-        $("#totalScore").html(userTotalValue);
+        $("#totalScore").html("My Score: " + userTotalValue);
     })
     $("#swtCookie").on("click", function () {
         userTotal.push(rSwtCookieChoice);
         userTotalValue = userTotal.reduce((a, b) => a + b, 0);
-        $("#totalScore").html(userTotalValue);
+        $("#totalScore").html("My Score: " + userTotalValue);
     })
     $("#oreoCookie").on("click", function () {
         userTotal.push(rOreoCookieChoice);
         userTotalValue = userTotal.reduce((a, b) => a + b, 0);
-        $("#totalScore").html(userTotalValue);
+        $("#totalScore").html("My Score: " + userTotalValue);
     })
     $("#CookieMnstr").on("click", function () {
         userTotal.push(rCookieMnstrChoice);
         userTotalValue = userTotal.reduce((a, b) => a + b, 0);
-        $("#totalScore").html(userTotalValue);
+        $("#totalScore").html("My Score: " + userTotalValue);
     })
 
     // This determines if the user has won or lost the game
@@ -73,17 +73,17 @@ $(document).ready(function () {
         console.log("userTotalValue" + userTotalValue)
         if (userTotalValue === rNumber) {
             totalWins++;
-            $("#totalWins").html(totalWins);
+            $("#totalWins").html("Wins: " + totalWins);
             rNumber = rNumberChoice();
-            $("#randomStartNumber").html(rNumber);
+            $("#randomStartNumber").html("Target Number: " + rNumber);
             userTotal = [];
             console.log(rNumber);
             console.log(totalWins);
         } else if (userTotalValue > rNumber) {
             totalLosses++;
-            $("#totalLosses").html(totalLosses);
+            $("#totalLosses").html("Losses: " + totalLosses);
             rNumber = rNumberChoice();
-            $("#randomStartNumber").html(rNumber);
+            $("#randomStartNumber").html("Target Number: " + rNumber);
             userTotal = [];
             console.log(rNumber);
             console.log(totalLosses);

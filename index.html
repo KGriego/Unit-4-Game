@@ -19,33 +19,47 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
-                <h1 class="display-4">
-                    The Cookie Collector Game!
-                </h1>
-                <p class="lead">
-                    You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal, you
-                    will add a specific amount of points to your total score. You win the game by matching your total score
-                    to the random number, you lose the game if your total score goes above the random number. The value of
-                    each crystal is hidden form you until you click on it. Each time the game starts, the game will change
-                    the values of each crystal.
-                </p>
+                <div class="col-md-8">
+                    <h1 class="display-4">
+                        The Cookie Collector Game!
+                    </h1>
+                    <p class="lead">
+                        You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal, you
+                        will add a specific amount of points to your total score. You win the game by matching your total
+                        score to the random number, you lose the game if your total score goes above the random number. The
+                        value of each crystal is hidden form you until you click on it. Each time the game starts, the game
+                        will change the values of each crystal.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title" id="randomStartNumber"></h5>
+                            <p id="totalScore" class="card-text"></p>
+                            <p id="totalWins" class="card-text"></p>
+                            <p id="totalLosses" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <div>
-        <p id="randomStartNumber">
-        </p>
-    </div>
-    <div>
-        <img id="chocoCookie" src="assets/images/chococookie.jpg" alt="Chocolate Cookie Image" class="img-thumbnail rounded img">
-        <img id="swtCookie" src="assets/images/swtcookie.jpg" alt="Sweet Cookie Image" class="img-thumbnail rounded img">
-        <img id="oreoCookie" src="assets/images/oreo.jpg" alt="Oreo Cookie" class="img-thumbnail rounded img">
-        <img id="CookieMnstr" src="assets/images/cookiemnstr.jpg" alt="Cookie Monster 'The Eater of Cookies'" class="img-thumbnail rounded img">
-    </div>
-    <div id="totalScore"></div>
-    <div>
-        <p id="totalWins"></p>
-        <p id="totalLosses"></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img id="chocoCookie" src="assets/images/chococookie.jpg" alt="Chocolate Cookie Image" class="img-thumbnail rounded img">
+            </div>
+            <div class="col-md-3">
+                <img id="swtCookie" src="assets/images/swtcookie.jpg" alt="Sweet Cookie Image" class="img-thumbnail rounded img">
+            </div>
+            <div class="col-md-3">
+                <img id="oreoCookie" src="assets/images/oreo.jpg" alt="Oreo Cookie" class="img-thumbnail rounded img">
+            </div>
+            <div class="col-md-3">
+                <img id="CookieMnstr" src="assets/images/cookiemnstr.jpg" alt="Cookie Monster 'The Eater of Cookies'" class="img-thumbnail rounded img">
+            </div>
+        </div>
     </div>
     <script src="assets/javascript/game.js"></script>
 
