@@ -1,6 +1,6 @@
 # Unit-4-Game
 
-##Description
+## Description
 You will be given a random number at the start of the game. There are four
 cookies below. By clicking on a cookie, you will add a specific amount of points
 to your total score. You win the game by matching your total score to the random
